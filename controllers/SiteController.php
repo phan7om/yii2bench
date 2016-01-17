@@ -49,7 +49,10 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        $number = rand(10, 99); // две цифры, чтобы ab не жаловался на разную длину реквестов
+        return $this->render('index', [
+            'random_number' => $number,
+        ]);
     }
 
     public function actionLogin()
