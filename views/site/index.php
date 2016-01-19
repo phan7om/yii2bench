@@ -4,5 +4,5 @@
 
 $this->title = 'Wellcome!';
 ?>
-<p>Hello, phantom!</p>
-<p>My random number is <?= $random_number ?></p>
+<p>Hello, stranger!</p>
+<p><a href="/random/10/99">To see random numbers</a></p>
