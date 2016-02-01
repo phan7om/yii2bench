@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\BenchData;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -55,9 +56,11 @@ class SiteController extends Controller
     public function actionRandom($start, $end)
     {
         $number = rand($start, $end); // две цифры, чтобы ab не жаловался на разную длину реквестов
+        $record = BenchData::findOne(['number' => $number]);
         return $this->render('random', [
             'random_number' => $number,
             'memory_usage' => memory_get_usage(),
+            'record' => $record,
         ]);
     }
 
